@@ -1,0 +1,130 @@
+{
+  "project": "TrafficVision: Automated Vehicle Tracking and Traffic Flow Analysis",
+  "course": "CSE3010 - Computer Vision",
+  "video_metadata": {
+    "file_name": "sample_traffic.mp4",
+    "resolution": "800x480",
+    "fps": 25.0,
+    "total_frames": 375,
+    "duration_sec": 15.0
+  },
+  "performance": {
+    "processed_frames": 375,
+    "total_processing_time_sec": 9.64,
+    "processing_fps": 38.9
+  },
+  "summary_statistics": {
+    "total_vehicles_counted": 14,
+    "peak_active_density": 11,
+    "average_flow_rate_vpm": 42.52,
+    "final_traffic_condition": "MODERATE",
+    "directional_counts": {
+      "down": 8,
+      "up": 6
+    },
+    "class_counts": {
+      "Vehicle": 10,
+      "Motorcycle": 4
+    }
+  },
+  "recent_crossings": [
+    {
+      "object_id": 4,
+      "frame_idx": 61,
+      "timestamp_s": 2.44,
+      "direction": "down",
+      "class_label": "Vehicle"
+    },
+    {
+      "object_id": 2,
+      "frame_idx": 71,
+      "timestamp_s": 2.84,
+      "direction": "down",
+      "class_label": "Vehicle"
+    },
+    {
+      "object_id": 9,
+      "frame_idx": 102,
+      "timestamp_s": 4.08,
+      "direction": "down",
+      "class_label": "Vehicle"
+    },
+    {
+      "object_id": 10,
+      "frame_idx": 122,
+      "timestamp_s": 4.88,
+      "direction": "up",
+      "class_label": "Motorcycle"
+    },
+    {
+      "object_id": 12,
+      "frame_idx": 127,
+      "timestamp_s": 5.08,
+      "direction": "down",
+      "class_label": "Motorcycle"
+    },
+    {
+      "object_id": 16,
+      "frame_idx": 180,
+      "timestamp_s": 7.2,
+      "direction": "down",
+      "class_label": "Vehicle"
+    },
+    {
+      "object_id": 18,
+      "frame_idx": 192,
+      "timestamp_s": 7.68,
+      "direction": "up",
+      "class_label": "Vehicle"
+    },
+    {
+      "object_id": 14,
+      "frame_idx": 195,
+      "timestamp_s": 7.8,
+      "direction": "down",
+      "class_label": "Motorcycle"
+    },
+    {
+      "object_id": 19,
+      "frame_idx": 206,
+      "timestamp_s": 8.24,
+      "direction": "up",
+      "class_label": "Vehicle"
+    },
+    {
+      "object_id": 22,
+      "frame_idx": 257,
+      "timestamp_s": 10.28,
+      "direction": "down",
+      "class_label": "Vehicle"
+    },
+    {
+      "object_id": 23,
+      "frame_idx": 294,
+      "timestamp_s": 11.76,
+      "direction": "down",
+      "class_label": "Vehicle"
+    },
+    {
+      "object_id": 24,
+      "frame_idx": 310,
+      "timestamp_s": 12.4,
+      "direction": "up",
+      "class_label": "Motorcycle"
+    },
+    {
+      "object_id": 27,
+      "frame_idx": 322,
+      "timestamp_s": 12.88,
+      "direction": "up",
+      "class_label": "Vehicle"
+    },
+    {
+      "object_id": 28,
+      "frame_idx": 350,
+      "timestamp_s": 14.0,
+      "direction": "up",
+      "class_label": "Vehicle"
+    }
+  ]
+}
