@@ -1,0 +1,87 @@
+# TrafficVision Configuration File
+# CSE3010 - Computer Vision BYOP Project
+
+video:
+  target_width: 800
+  target_height: 480
+  fps: 25
+
+preprocessing:
+  grayscale: true
+  gaussian_blur: true
+  blur_kernel: [5, 5]
+  clahe_enable: true
+  clahe_clip_limit: 2.0
+  clahe_grid_size: [8, 8]
+  roi_mask_enable: false
+  roi_vertices: [[0.0, 0.2], [1.0, 0.2], [1.0, 1.0], [0.0, 1.0]] # normalized coordinates
+
+detector:
+  type: "bg_subtractor"  # Options: bg_subtractor, cascade, dnn
+  bg_subtractor:
+    history: 500
+    var_threshold: 40
+    detect_shadows: true
+    shadow_value: 127
+    morph_kernel_size: 5
+    min_contour_area: 500
+    max_contour_area: 35000
+    min_aspect_ratio: 0.3
+    max_aspect_ratio: 3.5
+  cascade:
+    xml_path: "config/haarcascade_car.xml"
+    scale_factor: 1.1
+    min_neighbors: 3
+    min_size: [30, 30]
+
+tracker:
+  max_disappeared: 25
+  max_distance: 60
+  trail_length: 20
+
+counter:
+  counting_line: [[0.05, 0.55], [0.95, 0.55]]  # normalized line [(x1, y1), (x2, y2)]
+  counting_direction: "both"  # Options: both, down, up
+
+motion:
+  enable_klt_flow: true
+  max_corners: 100
+  quality_level: 0.3
+  min_distance: 7
+  block_size: 7
+
+traffic_analysis:
+  density_thresholds:
+    low: 3          # Active vehicles in ROI <= 3 -> LOW
+    moderate: 8     # Active vehicles in ROI <= 8 -> MODERATE
+                    # > 8 -> HIGH / CONGESTED
+  flow_thresholds:
+    low_vpm: 15.0      # Vehicles per minute
+    moderate_vpm: 45.0
+  condition_labels:
+    low: "LOW"
+    moderate: "MODERATE"
+    high: "HIGH / CONGESTED"
+
+visualization:
+  draw_bounding_boxes: true
+  draw_tracking_ids: true
+  draw_trajectories: true
+  draw_counting_line: true
+  draw_optical_flow: true
+  draw_hud_banner: true
+  colors:
+    bbox: [0, 255, 127]       # Spring Green
+    bbox_bg: [20, 20, 20]
+    line: [0, 0, 255]         # Bright Red
+    line_active: [0, 255, 255]# Yellow when crossed
+    text: [255, 255, 255]     # White
+    hud_bg: [30, 30, 30]      # Dark Gray
+    trail: [255, 191, 0]      # Deep Sky Blue
+    flow_vector: [255, 0, 255]# Magenta
+
+reporting:
+  export_csv: true
+  export_json: true
+  export_plot: true
+  output_dir: "results"

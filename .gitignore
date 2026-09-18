@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Output files & generated artifacts
+results/*.mp4
+results/*.csv
+results/*.json
+results/*.png
+!results/.gitkeep
+
+# Large dataset/video files (keep sample_traffic.mp4 if small)
+videos/*.mp4
+videos/*.avi
+videos/*.mov
+!videos/README.md
+
+# OS specific
+.DS_Store
+Thumbs.db
