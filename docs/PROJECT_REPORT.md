@@ -58,7 +58,7 @@ The project strictly demonstrates core Computer Vision algorithms covered in the
 - **NFR1 (Performance)**: The pipeline must achieve real-time or near-real-time processing speeds ($\ge 25\text{ FPS}$) on standard CPU hardware.
 - **NFR2 (Maintainability & Modularity)**: Software components must adhere to single-responsibility OOP principles across decoupled modules in `src/`.
 - **NFR3 (Reliability & Robustness)**: The system must gracefully handle missing files, unusual video resolutions, corrupt frames, and empty detection frames.
-- **NFR4 (Reproducibility)**: The system must be fully self-contained, including a synthetic video generator (`generate_sample_video.py`) allowing zero-dependency execution out-of-the-box.
+- **NFR4 (Reproducibility)**: The system must be fully self-contained, including a synthetic video generator (`generate_sample_video.py`) that allows the demonstration pipeline to be reproduced without requiring an external traffic dataset.
 - **NFR5 (Usability)**: The CLI interface must accept intuitive flags (`--input`, `--output`, `--config`) and display clear execution progress in the terminal.
 
 ---
@@ -169,7 +169,7 @@ $$\text{sign}(\text{ccw}(A, B, C)) \neq \text{sign}(\text{ccw}(A, B, D)) \quad \
 
 ## 6. Experimental Results & Verification
 
-The pipeline was executed against the synthetic multi-lane traffic dataset (`videos/sample_traffic.mp4`, 800x480 resolution, 25.0 FPS, 375 total frames, 15.0 seconds duration).
+The pipeline was executed against the synthetically generated multi-lane traffic video (`videos/sample_traffic.mp4`, 800x480 resolution, 25.0 FPS, 375 total frames, 15.0 seconds duration).
 
 ### 6.1 Quantitative Performance Metrics
 
@@ -177,12 +177,12 @@ The pipeline was executed against the synthetic multi-lane traffic dataset (`vid
 | :--- | :--- |
 | **Input Video Resolution** | $800 \times 480$ pixels @ 25.0 FPS |
 | **Total Frames Processed** | 375 frames (15.0 seconds) |
-| **Execution Time** | 10.50 seconds |
-| **Processing Speed** | **35.72 FPS** (Real-time CPU execution) |
-| **Total Vehicles Counted** | **13 vehicles** |
-| **Directional Breakdown** | Downward: 9, Upward: 4 |
-| **Average Flow Rate** | **52.0 vehicles / minute** |
-| **Peak Active Density** | 9 vehicles in ROI |
+| **Execution Time** | 9.64 seconds |
+| **Processing Speed** | **38.9 FPS** |
+| **Total Vehicles Counted** | **14 vehicles** |
+| **Directional Breakdown** | Downward: 8, Upward: 6 |
+| **Average Flow Rate** | **42.52 vehicles / minute** |
+| **Peak Active Density** | 11 vehicles in ROI |
 | **Final Traffic Condition** | **MODERATE** |
 | **Automated Unit Tests** | **13 / 13 Passed (100%)** |
 
