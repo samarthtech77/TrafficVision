@@ -1012,8 +1012,6 @@ The project includes:
 
 This project is released under the [MIT License](LICENSE).
 
-It was originally developed for academic and educational purposes, but the source code is provided under the terms of the MIT License.
-
 See [`LICENSE`](LICENSE) for details.
 
 ---
